@@ -1,12 +1,13 @@
 package DWTour.Tour.entity;
 
 import java.time.LocalDate;
-import java.util.*;
+// import java.util.*;
 
-import com.fasterxml.jackson.annotation.*;
+// import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "trips")
 public class Trip {
     @Column(unique = true)
     @Id
@@ -52,7 +53,6 @@ public class Trip {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "transaction_id", referencedColumnName = "id")
     private Transaction transaction;
-
 
     public Trip() {
     }
@@ -177,11 +177,11 @@ public class Trip {
         this.image_trip = image_trip;
     }
 
-    public Transaction getTransaction(){
+    public Transaction getTransaction() {
         return transaction;
     }
 
-    public void setTransaction(Transaction transaction){
+    public void setTransaction(Transaction transaction) {
         this.transaction = transaction;
     }
 
