@@ -1,9 +1,9 @@
 package DWTour.Tour.entity;
 
 import java.time.LocalDate;
-import java.util.*;
+// import java.util.*;
 
-import com.fasterxml.jackson.annotation.*;
+// import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 
 @Entity
