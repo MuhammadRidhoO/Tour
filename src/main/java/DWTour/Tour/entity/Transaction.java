@@ -14,8 +14,8 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "Quantity", nullable = false)
-    private Integer Quantity;
+    @Column(name = "quantity", nullable = false)
+    private Integer quantity;
 
     @Column(name = "total", nullable = false)
     private Integer total;
@@ -26,6 +26,15 @@ public class Transaction {
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
+
+    public Transaction(){
+    }
+
+    public Transaction(Integer quantity, Integer total, String status_payment){
+        this.quantity = quantity;
+        this.total =  total;
+        this.status_payment = status_payment;
+    }
 
     
 }
