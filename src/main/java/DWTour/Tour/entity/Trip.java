@@ -53,6 +53,7 @@ public class Trip {
     @JoinColumn(name = "transaction_id", referencedColumnName = "id")
     private Transaction transaction;
 
+
     public Trip() {
     }
 
@@ -79,4 +80,109 @@ public class Trip {
     public void setId(long id) {
         this.id = id;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getAccomodation() {
+        return accomodation;
+    }
+
+    public void setAccomodation(String accomodation) {
+        this.accomodation = accomodation;
+    }
+
+    public String getTransportation() {
+        return transportation;
+    }
+
+    public void setTransportation(String transportation) {
+        this.transportation = transportation;
+    }
+
+    public String getEat() {
+        return eat;
+    }
+
+    public void setEat(String eat) {
+        this.eat = eat;
+    }
+
+    public Integer getDay() {
+        return day;
+    }
+
+    public void setDay(Integer day) {
+        this.day = day;
+    }
+
+    public Integer getNight() {
+        return night;
+    }
+
+    public void setNight(Integer night) {
+        this.night = night;
+    }
+
+    public LocalDate getDate_Trip() {
+        return date_trip;
+    }
+
+    public void setDate_Trip(LocalDate date_trip) {
+        this.date_trip = date_trip;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Integer getQuota() {
+        return quota;
+    }
+
+    public void setQuota(Integer quota) {
+        this.quota = quota;
+    }
+
+    public String getDescraption() {
+        return descraption;
+    }
+
+    public void setDescraption(String descraption) {
+        this.descraption = descraption;
+    }
+
+    public String getImage_Trip() {
+        return image_trip;
+    }
+
+    public void setImage_Trip(String image_trip) {
+        this.image_trip = image_trip;
+    }
+
+    public Transaction getTransaction(){
+        return transaction;
+    }
+
+    public void setTransaction(Transaction transaction){
+        this.transaction = transaction;
+    }
+
 }
