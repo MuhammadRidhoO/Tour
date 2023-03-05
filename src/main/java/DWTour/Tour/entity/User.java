@@ -126,13 +126,4 @@ public class User {
         this.transaction = transaction;
     }
 
-    // public void addTrip(Trip trip){
-    //     this.trip.add(trip);
-    //     trip.setUser(this);
-    // }
-
-    // public void removeTrip(Trip trip){
-    //     this.trip.remove(trip);
-    //     trip.setUser(null);
-    // }
 }
