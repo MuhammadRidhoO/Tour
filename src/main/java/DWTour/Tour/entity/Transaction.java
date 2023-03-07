@@ -27,14 +27,45 @@ public class Transaction {
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    public Transaction(){
+    public Transaction() {
     }
 
-    public Transaction(Integer quantity, Integer total, String status_payment){
+    public Transaction(Integer quantity, Integer total, String status_payment) {
         this.quantity = quantity;
-        this.total =  total;
+        this.total = total;
         this.status_payment = status_payment;
     }
 
-    
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    public String status_payment() {
+        return status_payment;
+    }
+
+    public void setStatus_Payment(String status_payment) {
+        this.status_payment = status_payment;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 }
