@@ -32,8 +32,8 @@ public class User {
     @Column(name = "gender", nullable = false)
     private String gender;
 
-    @Column(name = "image", nullable = false)
-    private String image;
+    // @Column(name = "image", nullable = false)
+    // private String image;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -51,7 +51,7 @@ public class User {
         this.phone = phone;
         this.address = address;
         this.gender = gender;
-        this.image = image;
+        // this.image = image;
     }
 
     public long getId() {
@@ -110,13 +110,13 @@ public class User {
         this.gender = gender;
     }
 
-    public String getImage() {
-        return image;
-    }
+    // public String getImage() {
+    //     return image;
+    // }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+    // public void setImage(String image) {
+    //     this.image = image;
+    // }
 
     public Set<Transaction> getTransaction() {
         return transaction;
