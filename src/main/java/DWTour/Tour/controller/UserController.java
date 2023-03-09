@@ -21,6 +21,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    // membuat route untuk mengakses dengan menggunakan method yang di butuhkan
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public Iterable<User> findAll() {
         return userService.findAll();
@@ -40,7 +41,7 @@ public class UserController {
     public ResponseEntity<User> findById(@PathVariable("id") long id, @RequestBody User user) {
         User getUser = userRepository.findById(id);
 
-        getUser.setFull_Name(user.getFull_Name());
+        getUser.setfull_name(user.getFull_Name());
         getUser.setEmail(user.getEmail());
         getUser.setPassword(user.getPassword());
         getUser.setPhone(user.getPhone());

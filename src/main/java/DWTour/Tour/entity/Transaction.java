@@ -3,8 +3,6 @@ package DWTour.Tour.entity;
 import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 
-import java.util.Set;
-
 @Entity
 @Table(name = "transactions")
 public class Transaction {

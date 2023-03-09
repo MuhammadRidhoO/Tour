@@ -66,7 +66,7 @@ public class User {
         return full_name;
     }
 
-    public void setFull_Name(String full_name) {
+    public void setfull_name(String full_name) {
         this.full_name = full_name;
     }
 
@@ -111,11 +111,11 @@ public class User {
     }
 
     // public String getImage() {
-    //     return image;
+    // return image;
     // }
 
     // public void setImage(String image) {
-    //     this.image = image;
+    // this.image = image;
     // }
 
     public Set<Transaction> getTransaction() {
