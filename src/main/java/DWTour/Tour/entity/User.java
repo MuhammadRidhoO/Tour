@@ -23,9 +23,6 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "phone", nullable = false)
-    private String phone;
-
     @Column(name = "address", nullable = false)
     private String address;
 
@@ -35,6 +32,10 @@ public class User {
     // @Column(name = "image", nullable = false)
     // private String image;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "profile_id", referencedColumnName = "id")
+    private Profile profile;
+
     @JsonManagedReference
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Transaction> transaction;
@@ -43,12 +44,11 @@ public class User {
 
     }
 
-    public User(String full_name, String email, String password, String phone, String address, String gender,
+    public User(String full_name, String email, String password, String address, String gender,
             String image) {
         this.full_name = full_name;
         this.email = email;
         this.password = password;
-        this.phone = phone;
         this.address = address;
         this.gender = gender;
         // this.image = image;
@@ -86,14 +86,6 @@ public class User {
         this.password = password;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -117,6 +109,13 @@ public class User {
     // public void setImage(String image) {
     // this.image = image;
     // }
+    public Profile getProfile(){
+        return profile;
+    }
+
+    public void setProfile(Profile profile){
+        this.profile = profile;
+    }
 
     public Set<Transaction> getTransaction() {
         return transaction;

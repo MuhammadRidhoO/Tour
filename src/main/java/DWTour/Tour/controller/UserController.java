@@ -44,7 +44,6 @@ public class UserController {
         getUser.setfull_name(user.getFull_Name());
         getUser.setEmail(user.getEmail());
         getUser.setPassword(user.getPassword());
-        getUser.setPhone(user.getPhone());
         getUser.setAddress(user.getAddress());
         getUser.setGender(user.getGender());
         // getUser.setImage(user.getImage());
@@ -53,8 +52,8 @@ public class UserController {
         return ResponseEntity.ok().body(updateUser);
     }
 
-    @RequestMapping(value = "/user/{id}",  method = RequestMethod.DELETE)
-    public void removeOne(@PathVariable("id")long id){
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
+    public void removeOne(@PathVariable("id") long id) {
         userService.removeOne(id);
     }
 }
