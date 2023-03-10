@@ -23,17 +23,14 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "address", nullable = false)
-    private String address;
-
     @Column(name = "gender", nullable = false)
     private String gender;
 
-    // @Column(name = "image", nullable = false)
-    // private String image;
+    @Column(name = "image", nullable = false)
+    private String image;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "profile_id", referencedColumnName = "id")
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "profile", referencedColumnName = "id")
     private Profile profile;
 
     @JsonManagedReference
@@ -49,9 +46,8 @@ public class User {
         this.full_name = full_name;
         this.email = email;
         this.password = password;
-        this.address = address;
         this.gender = gender;
-        // this.image = image;
+        this.image = image;
     }
 
     public long getId() {
@@ -86,14 +82,6 @@ public class User {
         this.password = password;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getGender() {
         return gender;
     }
@@ -102,18 +90,19 @@ public class User {
         this.gender = gender;
     }
 
-    // public String getImage() {
-    // return image;
-    // }
+    public String getImage() {
+        return image;
+    }
 
-    // public void setImage(String image) {
-    // this.image = image;
-    // }
-    public Profile getProfile(){
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Profile getProfile() {
         return profile;
     }
 
-    public void setProfile(Profile profile){
+    public void setProfile(Profile profile) {
         this.profile = profile;
     }
 

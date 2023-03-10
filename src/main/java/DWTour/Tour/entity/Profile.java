@@ -19,6 +19,9 @@ public class Profile {
     @Column(name = "phone", nullable = false)
     private String phone;
 
+    @OneToOne(mappedBy = "profile")
+    private User user;
+
     public Profile() {
 
     }
@@ -29,35 +32,35 @@ public class Profile {
         this.phone = phone;
     }
 
-    public long getId(){
+    public long getId() {
         return id;
     }
 
-    public void setId(long id){
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getAddress(){
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address){
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getState(){
+    public String getState() {
         return state;
     }
 
-    public void setState(String state){
+    public void setState(String state) {
         this.state = state;
     }
 
-    public String getPhone(){
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone){
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 }

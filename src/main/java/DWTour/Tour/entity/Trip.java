@@ -50,7 +50,7 @@ public class Trip {
     @Column(name = "image_trip", nullable = false)
     private String image_trip;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "transaction_id", referencedColumnName = "id")
     private Transaction transaction;
 
