@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "transactions")
 public class Transaction {
 
     @Column(unique = true)
@@ -21,24 +20,31 @@ public class Transaction {
     @Column(name = "status_payment", nullable = false)
     private String status_payment;
 
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "trip", referencedColumnName = "id")
+    private Trip trip;
+
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
     public Transaction() {
+
     }
 
-    public Transaction(Integer quantity, Integer total, String status_payment) {
+    public Transaction(Integer quantity, Integer total, String status_payment, Trip trip, User user) {
         this.quantity = quantity;
         this.total = total;
         this.status_payment = status_payment;
+        this.trip = trip;
+        this.user = user;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -56,6 +62,14 @@ public class Transaction {
 
     public void setStatus_Payment(String status_payment) {
         this.status_payment = status_payment;
+    }
+
+    public Trip getTrip() {
+        return trip;
+    }
+
+    public void setTrip(Trip trip) {
+        this.trip = trip;
     }
 
     public User getUser() {

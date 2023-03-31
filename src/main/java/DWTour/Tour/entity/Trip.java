@@ -1,13 +1,8 @@
 package DWTour.Tour.entity;
 
-import java.time.LocalDate;
-// import java.util.*;
-
-// import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "trips")
 public class Trip {
     @Column(unique = true)
     @Id
@@ -19,6 +14,9 @@ public class Trip {
 
     @Column(name = "country", nullable = false)
     private String country;
+
+    @Column(name = "tripDate", nullable = false)
+    private String tripDate;
 
     @Column(name = "accomodation", nullable = false)
     private String accomodation;
@@ -35,9 +33,6 @@ public class Trip {
     @Column(name = "night", nullable = false)
     private Integer night;
 
-    @Column(name = "date_trip", nullable = false)
-    private LocalDate date_trip;
-
     @Column(name = "price", nullable = false)
     private Integer price;
 
@@ -47,18 +42,17 @@ public class Trip {
     @Column(name = "descraption", nullable = false)
     private String descraption;
 
-    @Column(name = "image_trip", nullable = false)
+    @Column(name = "image_trip", nullable = true)
     private String image_trip;
 
-    @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "transaction_id", referencedColumnName = "id")
+    @OneToOne(mappedBy = "trip")
     private Transaction transaction;
 
     public Trip() {
     }
 
     public Trip(String title, String country, String accomodation, String transportation, String eat, Integer day,
-            Integer night, LocalDate date_trip, Integer price, Integer quota, String descraption, String image_trip) {
+            Integer night, Integer price, Integer quota, String descraption, String image_trip, String tripDate) {
         this.title = title;
         this.country = country;
         this.accomodation = accomodation;
@@ -66,18 +60,18 @@ public class Trip {
         this.eat = eat;
         this.day = day;
         this.night = night;
-        this.date_trip = date_trip;
         this.price = price;
         this.quota = quota;
         this.descraption = descraption;
         this.image_trip = image_trip;
+        this.tripDate = tripDate;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -103,6 +97,14 @@ public class Trip {
 
     public void setAccomodation(String accomodation) {
         this.accomodation = accomodation;
+    }
+
+    public String getTripDate(){
+        return tripDate;
+    }
+
+    public void setTripDate (String tripDate){
+        this.tripDate = tripDate;
     }
 
     public String getTransportation() {
@@ -135,14 +137,6 @@ public class Trip {
 
     public void setNight(Integer night) {
         this.night = night;
-    }
-
-    public LocalDate getDate_Trip() {
-        return date_trip;
-    }
-
-    public void setDate_Trip(LocalDate date_trip) {
-        this.date_trip = date_trip;
     }
 
     public Integer getPrice() {

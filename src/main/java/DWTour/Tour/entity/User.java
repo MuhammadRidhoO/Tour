@@ -41,13 +41,14 @@ public class User {
 
     }
 
-    public User(String full_name, String email, String password, String address, String gender,
+    public User(String full_name, String email, String password, String address, String gender, Profile profile,
             String image) {
         this.full_name = full_name;
         this.email = email;
         this.password = password;
         this.gender = gender;
         this.image = image;
+        this.profile = profile;
     }
 
     public long getId() {
