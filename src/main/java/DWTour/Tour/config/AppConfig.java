@@ -1,11 +1,11 @@
-package DWTour.Tour.config;
+// package DWTour.Tour.config;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
+// import org.springframework.context.annotation.Configuration;
+// import org.springframework.context.annotation.ImportResource;
 
-@Configuration
-@ImportResource("classpath:/path/to/")
-public class AppConfig {
+// @Configuration
+// @ImportResource("classpath:/path/to/")
+// public class AppConfig {
               
-}
+// }
               
